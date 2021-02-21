@@ -22,35 +22,35 @@ We will use this number to offer you some diet plans that you could even change,
 
 ### Use Cases
 
-![Alt Use Cases](./images/use-cases.jpg "Use Cases")
+![Alt Use Cases](./martachisfit-doc/images/use-cases.jpg "Use Cases")
 
 ### Activities
 
-![Alt Operate activity](./images/activity-diagram.jpg "Operate activity")
+![Alt Operate activity](./martachisfit-doc/images/activity-diagram.jpg "Operate activity")
 
 ## Technical Description
 
 ### Blocks
 
-![Alt Blocks](./images/blocks.jpg "Blocks")
+![Alt Blocks](./martachisfit-doc/images/blocks.jpg "Blocks")
 
 ### Packages
 
 #### React components
 
-![Alt React comonents](./images/components.jpg "React components")
+![Alt React comonents](./martachisfit-doc/images/components.jpg "React components")
 
 #### Logic functions
 
-![Alt Logic functions](./images/logic.jpg "Logic functions")
+![Alt Logic functions](./martachisfit-doc/images/logic.jpg "Logic functions")
 
 ### Data Model
 
-![Alt Models](./images/models.jpg)
+![Alt Models](./martachisfit-doc/images/models.jpg)
 
 ### Testing (QA)
 
-![Alt Testing](./images/testing-coverage.png "Testing server side")
+![Alt Testing](./martachisfit-doc/images/testing-coverage.png "Testing server side")
 
 ### Technologies
 
@@ -73,7 +73,5 @@ We will use this number to offer you some diet plans that you could even change,
 - Populate the food db with more items
 - Watch out the images quality (some of them will be changed for self-made videos)
 - Comments component for recipes and articles
-- Historic weight chart on the profile with Chart.js (model below):
-![Alt Chart](./images/chartjs.png "chart")
 
 
