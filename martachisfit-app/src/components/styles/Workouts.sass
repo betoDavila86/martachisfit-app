@@ -5,33 +5,32 @@
     display: block
     position: relative
     min-height: 100vh
-    
+
 .workouts-pseudo::after
     content: ""
     background-image: url("../images/back-img-workouts.jpg")
     background-repeat: no-repeat
-    opacity: .1
+    opacity: .05
     top: 0
     left: 0
     bottom: 0
     right: 0
     position: absolute
     z-index: -1
-    
-.workouts
 
+.workouts
     &__warn
-        font-size: 1rem
+        font-size: 1.2rem
         width: 90%
         margin: auto
         text-align: left
+        padding: 1rem
 
     &__pre
-        margin-bottom: 3rem
+        margin: 0 auto 2rem
         background-color: #eef5f5
-        width: 300px
-        margin: auto
-        padding: .5rem
+        width: 350px
+        padding: 1rem
         border-radius: 3rem
 
     &__movements:hover
@@ -42,60 +41,53 @@
         color: #858a8a
 
     &__title
-        // margin: 0
         text-align: center
-        
+        font-size: 1.5rem
+
     &__level
         cursor: pointer
-        background-color: #eef5f5
-        width: 300px
-        margin: 1rem auto
-        padding: .5rem
-        box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4)
+        background-color: #FFF
+        width: 350px
+        margin: 2rem auto
+        padding: 1.2rem
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2)
+        border-radius: .5rem
+
+    &__level-title
+        font-size: 1.5rem
+        margin: .5rem 0
 
     &__level-description
         text-align: left
-        font-size: 1rem
+        font-size: 1.2rem
+        color: #96989c
 
     &__pre-title
         margin: 0 auto 1rem auto
+        font-size: 1.5rem
 
     &__pre-question
         margin: 0 auto 1rem auto
+        font-size: 1.3rem
 
-@media only screen and (min-width: 1100px)
-
-    .workouts-pseudo
-        display: block
-        position: relative
-        min-height: 100vh
-        
-    .workouts-pseudo::after
-        content: ""
-        background-image: url("../images/back-img-workouts.jpg")
-        background-repeat: no-repeat
-        background-position: center
-        opacity: .1
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        position: absolute
-        z-index: -1
-
+@media only screen and (min-width: 1024px)
     .workouts
-
         &__container
             display: grid
             grid-template-columns: 1fr 1fr 1fr
 
         &__title
-            margin: 2rem
+            font-size: 2rem
 
         &__level
-            cursor: pointer
-            background-color: #eef5f5
-            width: 350px
-            margin: 1rem auto
-            padding: .5rem
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4)
+            width: 320px
+        &__level-title
+            font-size: 1.75rem
+
+        &__warn
+            padding: 3rem
+
+@media screen and (min-width: 1400px)
+    .workouts
+        width: 75%
+        margin: auto

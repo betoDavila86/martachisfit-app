@@ -1,53 +1,67 @@
 .saved-food
+    position: relative
+    width: 100%
+
     &__list
         padding: 0
-        width: 80%
-        margin: auto
+        width: 95%
+        margin: .3rem auto
 
     &__food
         list-style: none
-        font-size: .8rem
+        font-size: 1.1rem
 
     &__block
         display: grid
-        grid-template-columns: repeat(6, 1fr)
+        grid-template-columns: 1.25fr .75fr .75fr .75fr .75fr 1fr
         text-align: center
+        align-items: center
+        gap: .5rem
+        justify-content: center
 
     &__block-item
         overflow: hidden
-        margin: .2rem 0
-        font-size: 1rem
+        font-size: 1.2rem
     
     &__row-header
         display: flex
-        font-size: 1rem
+        font-size: 1.2rem
         justify-content: space-evenly
         width: 60%
-        margin: auto
+        margin: .5rem auto
         font-weight: bold
 
     &__total
         text-align: center
         font-weight: bold
-        margin-bottom: 1rem
+        margin: 1rem 0
+        color: #0bb1ba
+        font-size: 1.3rem
 
     &__name
         font-weight: bold
-        font-size: 1rem
+        font-size: 1.2rem
 
     &__delete
-        font-size: 1rem
+        font-size: 1.2rem
+        text-decoration: none
+        align-self: center
 
     &__deleted
-        text-align: center
-        background-color: #c6caca
-        padding: .5rem
         position: absolute
-        box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-        width: 30%
+        padding: 1rem
+        background-color: #0bb1ba
+        box-shadow: 0 6px 12px #02020233
+        font-size: 1.1rem
+        top: 35%
+        left: 20%
+        border-radius: .5rem
+        color: #fff
+        font-weight: bold
 
     &__no-food
         text-align: center
+        font-size: 1.2rem
 
 
     

@@ -9,7 +9,7 @@
     content: ""
     background-image: url("../images/back-img-movements.jpg")
     background-repeat: no-repeat
-    opacity: .1
+    opacity: .05
     top: 0
     left: 0
     bottom: 0
@@ -18,28 +18,42 @@
     z-index: -1
 
 .movements
+    width: 85%
+    margin: auto
+
+    &__header
+        display: flex
+        padding: 1rem 0
+
+    &__center
+        display: flex
+        justify-content: center
+        flex-direction: column
+        align-items: center
+
     &__select
-        width: 250px
+        width: 300px
         margin: auto
         font-family: "Josefin Sans", sans-serif
+        cursor: pointer
 
     &__back
-        float: left
+        display: inline-block
         text-decoration-line: none
         cursor: pointer
-        margin: .6rem 0 0 .5rem
-        padding: .1rem
+        padding: .5rem
         border-radius: .5rem
         font-size: 1.1rem
-        background-color: #d4dbdb
+        background-color: #d7e0e0
 
     &__title
         margin: 0 auto .2rem auto
         padding: .5rem
-        font-size: 1.2rem
+        font-size: 1.3rem
 
     &__group-name
         font-size: 1.1rem
+        margin: .5rem 0
 
     &__group
         width: 90%
@@ -53,7 +67,7 @@
 
     &__group-movement > &__group-img
         -webkit-filter: brightness(100%)
-        box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.4)
+        box-shadow: 0 12px 24px rgba(0,0,0,0.3)
 
     &__group-movement > &__group-img:hover
         -webkit-filter: brightness(80%)
@@ -67,6 +81,7 @@
         margin: 0 auto .5rem auto
         width: 95%
         font-size: 1.1rem
+        color: #96989c
 
 /* width */
 ::-webkit-scrollbar
@@ -82,3 +97,21 @@
 ::-webkit-scrollbar-thumb
     background: #489899
     border-radius: 10px
+
+
+@media screen and (min-width: 1024px)
+    .movements
+        width: 70%
+
+        &__back
+            padding: .7rem
+            font-size: 1.2rem
+
+        &__title
+            font-size: 1.75rem
+
+        &__group-name
+            font-size: 1.3rem
+
+        &__delavier
+            font-size: 1.3rem

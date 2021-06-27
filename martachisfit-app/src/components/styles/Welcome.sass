@@ -1,152 +1,108 @@
-@media only screen and (max-width: 1050px)    
-    .welcome
+.welcome
+    &__title
+        text-align: center
+        margin: 0
 
-        &__title
-            text-align: center
-            margin: 0
+    &__container
+        margin: auto
+        width: 90%
+        display: flex
+        flex-direction: column
+        align-items: center
 
-        &__container
-            max-width: 300px
+        & p
+            font-size: 20px
+            padding: 1rem 0
+            color: #757474
+            line-height: 1.4rem
             margin: auto
 
-        &__subtitle
-            font-size: 1rem
+    &__subtitle
+        font-size: 1.25rem
+        margin: .5rem 0
 
-        &__recipes
-            background-color: #eef5f5
-            padding: .3rem 1rem
-            margin: 2rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,.4)
-            cursor: pointer
+    &__recipes,
+    &__workouts,
+    &__diets,
+    &__tips
+        max-width: 350px
+        box-shadow: 0 12px 24px rgba(0, 0, 0, .25)
+        background-color: #FFF
+        padding: .3rem 1rem
+        margin: 2rem 0
+        cursor: pointer
+        border-radius: .5rem
 
-        &__workouts
-            background-color: #eef5f5
-            padding: .3rem 1rem
-            margin: 2rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,.4)
-            cursor: pointer
+    &__marta-img
+        box-shadow: 0 12px 24px rgba(0, 0, 0, .25)
+        width: 350px
 
-        &__diets
-            background-color: #eef5f5
-            padding: .3rem 1rem
-            margin: 2rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,.4)
-            cursor: pointer
+    &__marta-img:hover
+        -webkit-filter: brightness(50%)
+        -webkit-transition: all 1s ease
+        -moz-transition: all 1s ease
+        -o-transition: all 1s ease
+        -ms-transition: all 1s ease
+        transition: all 1s ease
 
-        &__tips
-            background-color: #eef5f5
-            padding: .3rem 1rem
-            margin: 2rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,.4)
-            cursor: pointer
+    &__instagram-title
+        margin: .5rem 0
 
-        &__marta-img:hover
-            -webkit-filter: brightness(50%)
-            -webkit-transition: all 1s ease
-            -moz-transition: all 1s ease
-            -o-transition: all 1s ease
-            -ms-transition: all 1s ease
-            transition: all 1s ease
+.welcome-pseudo
+    min-height: 100vh
+    display: block
+    position: relative
 
-    .welcome-pseudo
-        min-height: 100vh
-        display: block
-        position: relative
+.welcome-pseudo::after
+    content: ""
+    background-image: url("../images/background-img.png")
+    background-repeat: no-repeat
+    opacity: .05
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    position: absolute
+    z-index: -1
 
-    .welcome-pseudo::after
-        content: ""
-        background-image: url("../images/background-img.png")
-        background-repeat: no-repeat
-        opacity: .2
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        position: absolute
-        z-index: -1
-
-@media only screen and (min-width: 1050px)
-
+@media only screen and (min-width: 1100px)
     .welcome
-        // min-height: 100vh
-        padding: 1rem
-
-        &__instagram-title
-            margin-top: 0
-
-        &__dietsdesign-link
-            font-size: .9rem
-            cursor: pointer
-            color: #0bb1ba
-            font-weight: bold
+        &__cards
+            width: 80%
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            place-items: center
 
         &__title
-            text-align: center
-            margin: 0
-
-        &__container
-            display: grid
-            grid-template-columns: 1fr 1fr 1fr
-            grid-template-rows: 1fr 1fr
+            font-size: 3rem
 
         &__subtitle
-            font-size: 1rem
+            font-size: 1.75rem
 
-        &__recipes
-            background-color: #eef5f5
-            padding: .3rem 1rem
-            width: 275px
-            margin: 2rem auto
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-            cursor: pointer
+        &__instagram-title
+            font-size: 1.75rem
 
-        &__workouts
-            background-color: #eef5f5
-            padding: .3rem 1rem
-            width: 275px
-            margin: 2rem auto
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,.4)
-            cursor: pointer
+        &__marta-img
+            width: 450px
 
-        &__diets
-            background-color: #eef5f5
-            width: 275px
-            padding: .3rem 1rem
-            margin: 2rem auto
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-            cursor: pointer
+    .card__home
+        max-width: 375px
+        height: 220px
 
-        &__tips
-            background-color: #eef5f5
-            width: 275px
-            height: 150px
-            padding: .3rem 1rem
-            margin: 2rem auto
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-            cursor: pointer
-            grid-column-start: 2
-            grid-row-start: 2
+@media only screen and (min-width: 1400px)
+    .welcome
+        width: 90%
+        margin: auto
 
-        &__marta-img:hover
-            -webkit-filter: brightness(50%)
-            -webkit-transition: all 1s ease
-            -moz-transition: all 1s ease
-            -o-transition: all 1s ease
-            -ms-transition: all 1s ease
-            transition: all 1s ease
+    .welcome__container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        margin: 0
+        align-items: center
+        gap: 3rem
+        width: 100%
 
-    .welcome-pseudo
-        min-height: 100vh
-        display: block
-        position: relative
-
-    .welcome-pseudo::after
-        content: ""
-        background-image: url("../images/background-img.png")
-        opacity: .1
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        position: absolute
-        z-index: -1
+    .welcome__title
+        text-align: left
+        padding: .5rem 2rem

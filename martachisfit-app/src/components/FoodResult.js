@@ -48,7 +48,7 @@ export default function FoodResult ({ result }) {
 
     return <> 
     <section className="food-result">
-        <h4 className="food-result__title">Resultado</h4>
+        <h4 className="food-result__title bold">Resultado</h4>
         <p className="food-result__item"><span className="food-result__category">Alimento:</span> {name}</p>
         <p className="food-result__item"><span className="food-result__category">Calorías:</span> {calories} Kcal</p>
         <p className="food-result__item"><span className="food-result__category">Porción:</span> {serving} (gramos o unidad) </p>
@@ -56,7 +56,7 @@ export default function FoodResult ({ result }) {
         <p className="food-result__item"><span className="food-result__category">Proteínas:</span> {protein} gr.</p>
         <p className="food-result__item"><span className="food-result__category">Grasas:</span> {fats} gr.</p>
         <button onClick={handleSaveFood}className="food-result__add">Añadir</button>
-    {view === true && <p className="food-result__added">¡Alimento añadido!</p>}
+    {view && <p className="food-result__added">¡Alimento añadido!</p>}
     </section>
     {/* {view === 'saved-food' && <SavedFood food={food} />} */}
 </>

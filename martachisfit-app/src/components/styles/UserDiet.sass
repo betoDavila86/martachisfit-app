@@ -1,50 +1,70 @@
 .user-diet
     min-height: 100vh
+    width: 90%
+    margin: auto
+
+    &__btn-container
+        display: inline-block
+        width: 100%
+        margin-top: .3rem
 
     &__back
-        font-size: 1rem
-        margin-left: 1.5rem
-        margin-top: .2rem
+        font-size: 1.1rem
         cursor: pointer
         background-color: #d7e0e0
         border-radius: .5rem
-        padding: .2rem
-        align-self: center
-        float: left
+        padding: .4rem
         text-decoration: none
+        float: left
     
     &__title
-        text-align: center
-        margin: 0
+        display: flex
+        align-items: center
+        justify-content: space-evenly
 
     &__time
-        font-size: 1rem
+        font-size: 1.1rem
         color: #686a6d
-        margin-left: .5rem
-
-    &__description
-        width: 90%
-        margin: 1rem auto
-        text-align: center
 
     &__cal-type
         margin: 1rem auto
         display: flex
         justify-content: space-evenly
 
+    &__cal-type > *
+        font-size: 1.3rem
+
     &__macros
-        text-align: center
+        display: flex
+        text-align: left
+        flex-direction: column
+        margin: auto
+        border: 1px solid #cecece
+        padding: .5rem 
+        border-radius: .5rem
+        background-color: #fff
+
+    &__macros > *
+        margin-bottom: .2rem
+        font-size: 1.3rem
+        margin: auto
 
     &__meals
-        width: 360px
+        width: 100%
         margin: 1.5rem auto
         text-align: center
         background-color: #eef5f5
         padding: .2rem
-        border-radius: 1rem
+        border-radius: .5rem
+
+    &__meals h4
+        font-size: 1.5rem
+        margin-bottom: .5rem
+        color: #0bb1ba
 
     &__meal
-        font-size: 1rem
+        font-size: 1.2rem
+        margin-bottom: .5rem
 
     &__random
         width: 95%
@@ -53,7 +73,6 @@
 
     &__line
         border-bottom: 1px solid #0bb1ba
-        width: 300px
         margin: 1.5rem auto
 
 .user-diet-pseudo

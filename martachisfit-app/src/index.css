@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 
-body {
+*{
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #eaf0f0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF;
+  margin-bottom: 50px;
 }
 
 h1, h2, h3, a, button {
@@ -34,5 +37,5 @@ input, label, select {
 
 input[type="email"], input[type="text"], input[type="number"]
 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }

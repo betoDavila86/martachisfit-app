@@ -25,7 +25,7 @@ import {
 import logo from '../../src/logo.png'
 import facebook from './icons/social/facebook.png'
 import instagram from './icons/social/instagram.png'
-// import linkedin from './icons/social/linkedin.png'
+import linkedin from './icons/social/linkedin.png'
 
 import {
     DropDownMenu,
@@ -89,7 +89,7 @@ export default function Home() {
         setError(error)
         setTimeout(() => {
             setError(null)
-        }, 5000)
+        }, 3000)
     }
 
     const handleGoToWelcome = () => {
@@ -421,8 +421,9 @@ export default function Home() {
                         <h1 className="home__title">MartachisFIT</h1>
                     </div>
                     <nav className="home__social">
-                        <a href="https://es-es.facebook.com/m.albimuro?fref=nf"><img className="home__social-logo" alt="facebook" src={facebook} width="13"></img></a><a href="https://www.instagram.com/martachis.fit/"><img alt="instagram" width="13" className="home__social-logo" src={instagram}></img></a>
-                        {/* <a href="https://www.linkedin.com/in/alberto-davila-gomez-250460b0"><img className="home__social-logo" alt="linkedin" width="13" src={linkedin}></img></a> */}
+                        <a href="https://es-es.facebook.com/m.albimuro?fref=nf" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="facebook" src={facebook} width="20"></img></a>
+                        <a href="https://www.instagram.com/martachis.fit/" rel="noreferrer" target="_blank"><img alt="instagram" width="20" className="home__social-logo" src={instagram}></img></a>
+                        <a href="https://www.linkedin.com/in/alberto-davila-gomez" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="linkedin" width="20" src={linkedin}></img></a>
                     </nav>
                 </div>
                 {error && <Feedback error={error} />}

@@ -1,23 +1,27 @@
 .food-result
     display: flex
     flex-direction: column
-    width: 230px
+    width: 100%
     margin: auto
-    padding: .5rem
+    padding: 1rem 2rem
     text-align: left
-    background-color: #eef5f5
-    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
+    background-color: #fff
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2)
+    border-radius: .5rem
+    position: relative
 
     &__title
         margin: .5rem 0
+        font-size: 1.4rem
 
     &__item
-        font-size: 1rem
+        font-size: 1.2rem
         margin: .5rem
         
     &__add
         border: none
-        padding: .2rem
+        padding: .3rem
+        width: 100%
         cursor: pointer
         background-color: #d6dbdb
         border-radius: .3rem
@@ -29,10 +33,29 @@
 
     &__category
         font-weight: bold
+        color: #0bb1ba
+        font-size: 1.3rem
 
     &__added
-        font-weight: bold
         position: absolute
-        padding: .5rem
-        background-color: #dee0e0
-        box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
+        padding: 1rem
+        background-color: #0bb1ba
+        box-shadow: 0 6px 12px #02020233
+        font-size: 1.3rem
+        top: 35%
+        left: 20%
+        border-radius: .5rem
+        color: #fff
+        font-weight: bold
+
+@media screen and (min-width: 1024px)
+    .food-result
+        width: 400px
+        padding: 1.7rem
+
+        &__title
+            font-size: 1.5rem
+
+        &__item
+            font-size: 1.3rem
+            margin: .6rem

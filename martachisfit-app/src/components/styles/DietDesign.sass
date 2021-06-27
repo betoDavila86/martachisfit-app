@@ -1,17 +1,21 @@
 .diet-design
-
+    width: 90%
+    margin: auto
+    
     &__title
         text-align: center
-        font-size: 1.3rem
+        font-size: 1.75rem
         margin: 0 auto 1rem auto
+        padding: 1rem 0
 
     &__input
         border: none
         border-bottom: 2px solid #0bb1ba
-        line-height: 1.5rem
-        width: 175px
+        line-height: 1.75rem
+        width: 250px
         background-color: transparent
         outline: none
+        text-indent: 5px
 
     &__input:hover
         background-color: #ebeeee
@@ -22,17 +26,23 @@
         outline: none
         cursor: pointer
 
+    &__lupa
+        width: 20px
+        height: auto
+
     &__search-form
         padding: 1.5rem
 
     &__description
-        width: 275px
-        margin: auto
-        line-height: 1.8rem
+        width: 100%
+        margin: 1rem auto
+        line-height: 1.7rem
         background-color: #eef5f5
         padding: 1rem
-        box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-        font-size: 1rem
+        box-shadow: 0 12px 24px rgba(0,0,0,0.2)
+        font-size: 1.5rem
+        border-radius: .5rem
+        color: #96989c
 
 .diet-design-pseudo
     display: block
@@ -42,12 +52,45 @@
 .diet-design-pseudo::after
     content: ""
     background-image: url("../images/back-img-dietdesign.jpg")
-    opacity: .2
+    opacity: .1
     top: 0
     left: 0
     bottom: 0
     right: 0
     position: absolute
     z-index: -1
+
+@media screen and (min-width: 800px)
+    .diet-design
+        width: 70%
+        margin: auto
+        display: grid
+        grid-template-columns: .75fr 1.5fr
+        align-items: center
+        justify-content: center
+        grid-auto-rows: auto
+
+        &__title
+            grid-column: 1/3
+
+        &__description
+            grid-column: 1/2
+            grid-row: span 2
+            width: 400px
+            margin-right: 1rem
+
+        &__bar-result
+            grid-column: 2/3
+
+
+@media screen and (min-width: 1400px)
+    .diet-design
+        width: 60%
+
+        &__title
+            font-size: 3rem
+
+        &__input
+            width: 300px
 
     

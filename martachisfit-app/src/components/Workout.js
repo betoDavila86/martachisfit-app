@@ -1,10 +1,8 @@
-import ReactMarkdown from 'react-markdown'
-import './styles/Workout.sass'
-// import redHeart from '../components/icons/heart-red.png'
-// import emptyHeart from '../components/icons/heart-empty.png'
-import quitar from '../components/icons/quitar.png'
-import anadir from '../components/icons/anadir.png'
-import { Feedback } from '../components/index'
+import ReactMarkdown from 'react-markdown';
+import './styles/Workout.sass';
+import quitar from '../components/icons/quitar.png';
+import anadir from '../components/icons/anadir.png';
+import { Feedback } from '../components/index';
 
 export default function Workout({ source, onGoToWorkouts, onSaveWorkout, like, error }) {
 
@@ -23,11 +21,10 @@ export default function Workout({ source, onGoToWorkouts, onSaveWorkout, like, e
                     {error && <Feedback error={error}/>}
                 </div>
                 <div className="workout__header">
-                    <p><span className="bold">Nivel</span> {level}</p>
-                    <p><span className="bold">Días</span> {daysWeek}</p>
-                    <p><span className="bold">Series</span> {setsWeek}</p>
+                    <p><span className="bold">Nivel:</span> {level}</p>
+                    <p><span className="bold">Días:</span> {daysWeek}</p>
+                    <p><span className="bold">Series/semana:</span> {setsWeek}</p>
                 </div>
-                {/* <button onClick={() => onSaveArticle(_id)} className="article__read-later-btn article__btn">Leer más tarde</button> */}
                 <div className="workout__description">
                     <ReactMarkdown source={description} />
                 </div>

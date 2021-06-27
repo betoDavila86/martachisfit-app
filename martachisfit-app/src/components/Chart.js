@@ -1,4 +1,5 @@
-import { Line, defaults } from 'react-chartjs-2'
+import { Line, defaults } from 'react-chartjs-2';
+import './styles/Chart.sass';
 
 defaults.global.tooltips.enabled = true
 
@@ -12,7 +13,7 @@ export default function Chart({ weightHistory }) {
         weights.push(weight)
     })
 
-    return <div>
+    return <div className="chart">
         <Line
             data={{
                 labels: dates,
@@ -26,11 +27,11 @@ export default function Chart({ weightHistory }) {
                 ],
 
             }}
-            height={150}
+            height={160}
             width={250}
             options={{
-                defaultFontSize: '8',
-                maintainAspectRatio: false,
+                defaultFontSize: '18',
+                maintainAspectRatio: true,
                 scales: {
                     yAxes: [
                         {
@@ -42,7 +43,7 @@ export default function Chart({ weightHistory }) {
                 },
                 legend: {
                     labels: {
-                        fontSize: 9
+                        fontSize: 15
                     }
                 }
             }}
