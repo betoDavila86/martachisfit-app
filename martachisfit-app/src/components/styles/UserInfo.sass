@@ -1,45 +1,58 @@
 .user-info
+    width: 90%
+    margin: auto
 
     &__title
         text-align: center
-        margin: 0 auto 3rem auto
+        margin: 0 auto 1rem
         font-size: 1.6rem
         padding-top: .5rem
 
-    &__gender
-        width: 60%
-        margin: auto
+    &__quiero
+        font-size: 1.5rem
+        margin: 1rem 0
 
-    &__goal
-        width: 300px
+    &__gender
         margin: auto
+        width: 100%
+
+    &__goal select
+        width: 100%
+        padding: .75rem
+        border-radius: .2rem
+        outline: none
+        background-color: #fff
 
     &__numbers
-        width: 200px
-        margin: 1.5rem auto
-        display: grid
-        grid-template-columns: 1fr 130px
-        grid-template-rows: 35px 35px 35px
-        grid-row-gap: 1rem
+        margin: 1rem 0
+
+        & div
+            display: flex
+            align-items: center
+            margin: auto
+
+        & input
+            width: 100%
+            padding: .5rem
+            outline: none
 
     &__activity
-        width: 275px
         display: flex
-        margin: 2rem auto
+        margin: 1rem auto
+        flex-direction: column
         justify-content: space-between
 
     &__p
-        width: 90%
-        margin: 4.5rem auto
+        margin: 1rem auto
         font-size: 1.2rem
 
     &__next
         border: none
         background-color: #b1ebee
         padding: .5rem
-        border-radius: 1rem
+        border-radius: .5rem
         cursor: pointer
-        margin-top: 1rem
+        width: 100%
 
     
     &__back
@@ -67,6 +80,8 @@
 .user-info-pseudo::after
     content: ""
     background-image: url("../images/back-img-userinfo.jpg")
+    background-position: center
+    background-repeat: no-repeat
     opacity: .1
     top: 0
     left: 0
@@ -74,4 +89,37 @@
     right: 0
     position: absolute
     z-index: -1
+
+@media screen and (min-width: 768px)
+    .user-info
+        width: 70%
+
+        &__numbers div
+            margin: 1rem 0
+
+        &__activity
+            flex-direction: row
+            justify-content: space-evenly
+            margin: 1.5rem 0
+
+
+@media screen and (min-width: 1100px)
+    .user-info
+        width: 50%
+
+        &__form
+            width: 80%
+            margin: auto
+
+        &__title
+            font-size: 2.5rem
+
+        &__quiero
+            font-size: 2rem
+
+        &__p
+            width: 80%
+
+        & *
+            margin-bottom: 1rem
         

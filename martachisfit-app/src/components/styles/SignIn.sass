@@ -3,10 +3,12 @@
     display: flex
     flex-direction: column
     justify-content: space-evenly
-    height: 100vh
+    min-height: 100vh
+    width: 90%
+    margin: auto
 
     &__title
-        font-size: 3rem
+        font-size: 4rem
 
     &__btn
         border: none
@@ -15,7 +17,10 @@
         border-radius: 1rem
         margin: .5rem auto
         cursor: pointer
-        width: 150px
+        width: 90%
+
+    &__btn:hover
+        background-color: #c0dfdf
 
     &__form
         display: flex
@@ -27,8 +32,9 @@
         border-bottom: 1px solid #0bb1ba
         line-height: 1.5rem
         background-color: transparent
-        width: 200px
-        margin: .8rem auto
+        width: 90%
+        margin: 1rem auto
+        outline: none
 
 .sign-in-pseudo
     display: block
@@ -45,3 +51,24 @@
     right: 0
     position: absolute
     z-index: -1
+
+@media screen and (min-width: 768px)
+    .sign-in
+        &__input
+            margin: 1.5rem auto
+            width: 70%
+            line-height: 2rem
+
+        &__btn
+            width: 70%
+
+@media screen and (min-width: 1100px)
+    .sign-in
+        &__input
+            margin: 2rem auto
+            width: 40%
+            line-height: 2rem
+
+        &__btn
+            width: 40%
+            font-size: 1.5rem

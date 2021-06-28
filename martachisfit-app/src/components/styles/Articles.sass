@@ -1,18 +1,21 @@
 .article
-    padding: .2rem
-    min-height: 100vh
 
     &__container
         width: 90%
         margin: auto
-        margin-bottom: 50px
+        position: relative
 
     &__read-already-feedback
-        background-color: #eaf0f0
-        width: 15%
-        margin: auto
+        padding: 1rem
+        background-color: #0bb1ba
+        box-shadow: 0 6px 12px #02020233
+        font-size: 1.2rem
+        border-radius: .5rem
+        color: #fff
         font-weight: bold
-        position: relative
+        position: absolute
+        top: 0
+        left: 45%
 
     &__title-general
         margin: 0
@@ -29,7 +32,6 @@
         outline: none
         padding: .2rem
 
-    
     &__btn
         border: none
         padding: .2rem
@@ -40,7 +42,7 @@
 
     &__btn:hover
         background-color: #cdd1d1
-    
+
     &__added
         font-size: 1.2rem
 
@@ -92,8 +94,9 @@ ul > li
 .article-pseudo
     display: block
     position: relative
-    height: 95vh
-    
+    min-height: 100vh
+    margin-bottom: 50px
+
 .article-pseudo::after
     content: ""
     background-image: url("../images/back-img-article.jpg")
@@ -113,7 +116,7 @@ p > strong
 @media only screen and (min-width: 1100px)
     .article
         &__container
-            width: 80%
+            width: 75%
 
         &__img
             width: 500px
@@ -124,6 +127,8 @@ p > strong
             font-size: 2rem
 
         & p
-            font-size: 1.3rem
+            font-size: 1.5rem
 
-
+        &__btn
+            padding: .5rem
+            font-size: 1.4rem

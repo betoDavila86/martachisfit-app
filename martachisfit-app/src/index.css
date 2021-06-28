@@ -9,7 +9,6 @@
 
 body {
   background-color: #FFF;
-  margin-bottom: 50px;
 }
 
 h1, h2, h3, a, button {
@@ -37,6 +36,7 @@ select {
 input, label, select {
   margin: .3rem;
   background-color: #f8fafa;
+  border: #0bb1ba
 }
 
 input[type="email"], input[type="text"], input[type="number"]

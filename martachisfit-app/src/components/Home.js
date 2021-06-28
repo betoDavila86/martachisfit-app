@@ -42,7 +42,8 @@ import {
     Workouts,
     Workout,
     Movements,
-    Feedback
+    Feedback,
+    Footer
 } from './index'
 
 export default function Home() {
@@ -413,36 +414,36 @@ export default function Home() {
 
 
     return <>
-        <div className="home__logo-title-dropdown">
-            <div className="home">
-                <div className="home__header">
-                    <img className="home__logo" alt="logo" src={logo} height="100" width="100" onClick={handleGoToWelcome}></img>
-                    <div className="home__title-user">
-                        <h1 className="home__title">MartachisFIT</h1>
-                    </div>
-                    <nav className="home__social">
-                        <a href="https://es-es.facebook.com/m.albimuro?fref=nf" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="facebook" src={facebook} width="20"></img></a>
-                        <a href="https://www.instagram.com/martachis.fit/" rel="noreferrer" target="_blank"><img alt="instagram" width="20" className="home__social-logo" src={instagram}></img></a>
-                        <a href="https://www.linkedin.com/in/alberto-davila-gomez" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="linkedin" width="20" src={linkedin}></img></a>
-                    </nav>
+        <div className="home">
+            <div className="home__header">
+                <img className="home__logo" alt="logo" src={logo} height="100" width="100" onClick={handleGoToWelcome}></img>
+                <div className="home__title-user">
+                    <h1 className="home__title">MartachisFIT</h1>
                 </div>
-                {error && <Feedback error={error} />}
-                <DropDownMenu
-                    onGoToDietDesign={handleGoToDietDesign}
-                    onGoToWelcome={handleGoToWelcome}
-                    onGoToRecipes={handleGoToRecipes}
-                    onGoToUserDiet={handleGoToUserDiet}
-                    onGoToBlog={handleGoToBlog}
-                    onGoToProfile={handleGoToProfile}
-                    onGoToWorkouts={handleGoToWorkouts}
-                />
+                <nav className="home__social">
+                    <a href="https://es-es.facebook.com/m.albimuro?fref=nf" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="facebook" src={facebook} width="20"></img></a>
+                    <a href="https://www.instagram.com/martachis.fit/" rel="noreferrer" target="_blank"><img alt="instagram" width="20" className="home__social-logo" src={instagram}></img></a>
+                    <a href="https://www.linkedin.com/in/alberto-davila-gomez" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="linkedin" width="20" src={linkedin}></img></a>
+                    <a className="home__logout" href="#" onClick={handleGoToLanding}>Logout</a>
+                </nav>
             </div>
+            {error && <Feedback error={error} />}
+            <DropDownMenu
+                onGoToDietDesign={handleGoToDietDesign}
+                onGoToWelcome={handleGoToWelcome}
+                onGoToRecipes={handleGoToRecipes}
+                onGoToUserDiet={handleGoToUserDiet}
+                onGoToBlog={handleGoToBlog}
+                onGoToProfile={handleGoToProfile}
+                onGoToWorkouts={handleGoToWorkouts}
+            />
             {view === 'welcome' &&
-                <Welcome onGoToRecipes={handleGoToRecipes}
+                <Welcome
+                    onGoToRecipes={handleGoToRecipes}
                     onGoToArticles={handleGoToBlog}
                     onGoToDiets={handleGoToUserDiet}
-                    onGoToDietDesign={handleGoToDietDesign}
                     onGoToWorkouts={handleGoToWorkouts}
+                    onGoToDietDesign={handleGoToDietDesign}
                 />}
             {view === 'diet-design' && <DietDesign />}
             {view === 'workouts' && <Workouts error={error} onChosenLevel={handleRetrieveWorkout} onGoToMovements={handleGoToMovements} />}
@@ -482,6 +483,12 @@ export default function Home() {
                 />}
             {view === 'chosen-article' && <ChosenArticle source={chosenArticle} error={error} message={message} onReadArticle={handleReadArticle} />}
             {view === 'logout' && <Logout onRefresh={handleGoToLanding} name={name} />}
+            <Footer
+                onGoToRecipes={handleGoToRecipes}
+                onGoToArticles={handleGoToBlog}
+                onGoToDiets={handleGoToUserDiet}
+                onGoToWorkouts={handleGoToWorkouts}
+            />
         </div>
     </>
 }

@@ -1,0 +1,75 @@
+.footer
+    &__container
+        display: grid
+        grid-template-columns: 1fr 1.5fr .25fr
+        align-items: center
+        background-color: #0bb1ba
+        padding: 0 1rem
+
+    &__developer
+        grid-column: 1/2
+        display: flex
+        flex-direction: column
+        text-align: left
+
+        & span
+            font-size: .8rem
+
+        & h3,
+        & span
+            color: #fff
+
+    &__nav
+        grid-column: 2/3
+        padding: 1rem
+
+        & a
+            color: #fff
+
+    &__socials
+        grid-column: 3/4
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+        & span
+            color: #fff
+            margin: .3rem 0
+
+    &__copy
+        padding: 1rem
+        grid-column: 1/-1
+
+    &__copy-me
+        color: #bdbbbb
+        font-size: 1.3rem
+
+
+@media screen and (min-width: 768px)
+    .footer
+        &__container
+            padding: 0 2rem
+
+        &__developer
+            & h3,
+            & span
+                font-size: 1.5rem
+
+        &__nav a
+            font-size: 1.5rem
+
+        &__socials span
+            font-size: 1.5rem
+
+        &__copy-me
+            font-size: 1.4rem
+
+
+@media screen and (min-width: 1200px)
+    .footer
+        &__container
+            padding: 1rem 4rem
+
+        &__nav-list
+            display: flex
+            justify-content: space-evenly

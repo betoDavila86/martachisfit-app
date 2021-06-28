@@ -79,6 +79,7 @@
 
     &__weight-form > input
         border: 1px solid #0bb1ba
+        text-indent: 5px
 
     &__pic
         width: 250px
@@ -133,8 +134,9 @@
         display: flex
         flex-direction: column
 
-    &__no-workout
-        font-size: 1.1rem
+    &__no-workout,
+    &__no-recipes
+        font-size: 1.2rem
 
     &__recipes-container
         background-color: #fff
@@ -157,7 +159,7 @@
         color: #303236
 
     &__no-articles
-        font-size: 1.1rem
+        font-size: 1.2rem
 
     &__record-container
         background-color: #fff
@@ -193,6 +195,7 @@
 
     &__no-articles
         text-align: center
+        font-size: 1.2rem
 
     &__articles-list
         list-style: none
@@ -262,6 +265,7 @@
     .user-profile
         &__weight-form > input
             width: 80%
+            line-height: 2rem
 
         &__weights-container,
         &__workout-container,
@@ -338,3 +342,8 @@
 
         &__record-container
             grid-column: 3/4
+
+        &__no-recipes,
+        &__no-articles,
+        &__no-workout
+            font-size: 1.5rem

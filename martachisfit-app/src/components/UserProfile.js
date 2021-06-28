@@ -109,12 +109,13 @@ export default function UserProfile({ user, avatar, onSaved, feedbackWeight, onL
                 </div>
                 <div className="user-profile__recipes-container">
                     <h3 className="user-profile__title-container">¡Ponte el delantal!</h3>
-                    {!savedRecipes.length && <p className="user-profile__no-recipes">No has añadido recetas a tu colección</p>}
-                    <div className="user-profile__recipes-carousel">
-                        {savedRecipes.map(({ _id, urlPathImg }) => <div className="user-profile__recipes-carousel-recipe" key={_id} onClick={() => onGoToRecipe(_id)}>
-                            {urlPathImg && <img className="user-profile__recipes-carousel-img" src={urlPathImg} alt="recipe-img-saved" />}
-                        </div>)}
-                    </div>
+                    {savedRecipes.length && savedRecipes ?
+                        <div className="user-profile__recipes-carousel">
+                            {savedRecipes.map(({ _id, urlPathImg }) =>
+                                <div className="user-profile__recipes-carousel-recipe" key={_id} onClick={() => onGoToRecipe(_id)}>
+                                    <img className="user-profile__recipes-carousel-img" src={urlPathImg} alt="recipe-img-saved" />
+                                </div>)}
+                        </div> : <p className="user-profile__no-recipes">No has añadido recetas a tu colección</p>}
                 </div>
 
                 <div className="user-profile__articles-container">
