@@ -1,7 +1,7 @@
 .recipe-pseudo
     display: block
     position: relative
-    
+
 .recipe-pseudo::after
     content: ""
     background-image: url("../images/back-img-recipe.jpg")
@@ -14,10 +14,10 @@
     z-index: -1
 
 .recipe
-    width: 80%
+    width: 85%
     margin: auto
     padding-bottom: 1rem
-        
+
     &__feedback-btn
         margin: 0
         font-size: 1.1rem
@@ -27,13 +27,13 @@
         background-color: transparent
         border: none
         cursor: pointer
-    
+
     &__heart-btn:focus
         outline: none
 
     &__img
         display: block
-        width: 300px
+        width: 275px
         height: auto
         box-shadow: 0 12px 24px rgba(0,0,0,0.2)
         border-radius: .5rem
@@ -46,12 +46,15 @@
         padding: .5rem
         align-self: center
 
+    &__back:hover
+        background-color: #c0dfdf
+
     &__btns
         display: flex
         justify-content: space-between
         align-items: center
         padding-top: 1rem
-    
+
     &__btn
         border: none
         background-color: transparent
@@ -62,8 +65,8 @@
         border-radius: .3rem
 
     &__btn:hover
-        background-color: #cdd1d1
-    
+        background-color: #c0dfdf
+
     &__added
         font-size: 0.8rem
         margin-left: .4rem
@@ -81,11 +84,9 @@
 
 @media screen and (min-width: 768px)
     .recipe
-        width: 75%
 
-@media only screen and (min-width: 1024px)
+@media only screen and (min-width: 768px)
     .recipe
-
         &__title
             text-align: left
 
@@ -97,7 +98,7 @@
             font-size: 2rem
 
         &__img
-            width: 475px
+            width: 375px
             float: left
             margin-right: 1.5rem
 
@@ -116,3 +117,5 @@
             margin-bottom: 1rem
             width: 550px
 
+        &__content p
+            font-size: 1.5rem

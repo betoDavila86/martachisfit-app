@@ -4,7 +4,7 @@
 .workout-pseudo
     display: block
     position: relative
-    height: 130vh
+    min-height: 100vh
     
 .workout-pseudo::after
     content: ""
@@ -63,29 +63,31 @@
         align-self: center
 
     &__header
+
+    &__header-pre
         display: flex
         flex-direction: column
-        margin: .75rem auto
-        justify-items: flex-start
-        width: 85%
+        justify-content: center
+        margin: 1rem 0
+        border: 1px solid #cecece
+        padding: .5rem 
+        border-radius: .5rem
+        background-color: #fff
 
-    &__header > p
+    &__header p
         font-size: 1.3rem
-        text-align: left
-        margin-bottom: .2rem
+        margin-bottom: .3rem
 
     &__description
-        width: 85%
         margin: auto
         text-align: left
         
-    &__description > p
+    &__description p
         color: #96989c
-        font-size: 1.1rem
+        font-size: 1.2rem
         margin-bottom: .3rem
 
     &__layout
-        width: 350px
         text-align: left
         margin: 1rem auto
         background-color: #fff
@@ -93,9 +95,9 @@
         box-shadow: 0 12px 24px rgba(0,0,0,0.3)
         border-radius: .5rem
     
-    &__layout > p
-        font-size: 1rem
-        margin: .4rem 0
+    &__layout p
+        font-size: 1.1rem
+        margin: .5rem 0
 
     &__layout strong
         font-size: 1.2rem
@@ -106,9 +108,57 @@
 
 @media only screen and (min-width: 768px)
     .workout
+        width: 80%
+
+        &__header
+            width: 90%
+            margin: auto
+
+            & p
+                font-size: 1.5rem
+
         &__layout
-            width: 400px
+            width: 80%
+
+        &__layout p
+            font-size: 1.2rem
+            margin: .6rem 0
 
         &__mov-title-heart
             display: flex
-            justify-content: space-around
+            justify-content: space-between
+
+@media screen and (min-width: 1100px)
+    .workout
+        &__mov-title-heart
+            margin-bottom: 2rem
+
+        &__name
+            font-size: 2rem
+
+        &__to-workouts
+            font-size: 1.3rem
+            padding: .7rem
+
+        &__to-workouts:hover
+            background-color: #c0dfdf
+
+        &__description
+            margin: 0
+
+        &__description p
+            font-size: 1.4rem
+            margin: .5rem
+
+        &__content
+            display: grid
+            grid-template-columns: 1.2fr .05fr 2fr
+
+        &__header
+            grid-column: 1/2
+            display: flex
+            flex-direction: column
+            height: 100%
+
+        &__content-workout
+            grid-column: 3/4

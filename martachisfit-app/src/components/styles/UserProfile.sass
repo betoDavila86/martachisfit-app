@@ -1,4 +1,3 @@
-
 .user-profile-pseudo
     display: block
     position: relative
@@ -7,6 +6,8 @@
 .user-profile-pseudo::after
     content: ""
     background-image: url("../images/back-img-profile.jpg")
+    background-position: center
+    background-repeat: no-repeat
     opacity: .1
     top: 0
     left: 0
@@ -16,7 +17,7 @@
     z-index: -1
 
 .user-profile
-    & h3
+    &__title-container
         font-size: 1.5rem
         margin-bottom: .5rem
 
@@ -36,6 +37,7 @@
     &__weights-record
         display: grid
         align-items: center
+        grid-template-columns: .75fr .2fr 1fr 1fr
 
     &__weights > p
         font-size: 1rem
@@ -55,33 +57,31 @@
         margin-top: .5rem
         grid-column-start: 1
         grid-column-end: 5
+        width: 100%
 
     &__before
         font-size: 1.1rem
         grid-row-start: 1
-        grid-column-start: 3
+        grid-column-start: 2
         grid-column-end: 5
 
     &__current
         font-size: 1.1rem
         grid-row-start: 2
-        grid-column-start: 3
+        grid-column-start: 2
         grid-column-end: 5
 
     &__scale-img
-        width: 50px
+        width: 40px
         grid-row-start: 1
         grid-row-end: 3
+        justify-self: center
 
     &__weight-form > input
-        border: 1px solid #0b7f94
-
-    &__name-pic
-        max-width: 400px
-        margin: auto
+        border: 1px solid #0bb1ba
 
     &__pic
-        width: 150px
+        width: 250px
         border-radius: 50%
 
     &__progression-title
@@ -106,7 +106,7 @@
     &__progression-input::before
         content: 'Elige avatar'
         display: inline-block
-        border: 1px solid #0b7f94
+        border: 1px solid #0bb1ba
         border-radius: .5rem
         padding: 5px 3px
         outline: none
@@ -120,7 +120,7 @@
     &__feedback
         font-size: 1.2rem
         text-align: center
-        color: #0b7f94
+        color: #0bb1ba
         margin-top: .5rem
 
     &__workout-container
@@ -130,6 +130,8 @@
         border-radius: .5rem
         box-shadow: 0 12px 24px rgba(0,0,0,0.2)
         padding-bottom: .5rem
+        display: flex
+        flex-direction: column
 
     &__no-workout
         font-size: 1.1rem
@@ -151,7 +153,7 @@
         padding-bottom: .5rem
 
     &__articles--link
-        font-size: 1.1rem
+        font-size: 1.2rem
         color: #303236
 
     &__no-articles
@@ -165,21 +167,13 @@
         box-shadow: 0 12px 24px rgba(0,0,0,0.2)
         padding-bottom: .5rem
 
-    &__question
-        margin: 0
-
-    &__question-btn
-        width: 85%
-        text-align: left
-        margin: auto
-
     &__user
-        font-size: 1.2rem
+        font-size: 1.5rem
         margin: 1rem 0
 
         &--name
-            font-weight: bold
-            font-size: 1.2rem
+            font-size: 1.5rem
+            color: #0bb1ba
 
     &__logout-container
         display: flex
@@ -209,6 +203,7 @@
         list-style: none
         display: grid
         justify-content: center
+        height: 100%
 
     &__workout-item
         display: flex
@@ -234,7 +229,7 @@
         margin: 0 .2rem
         cursor: pointer
 
-    &__recipes-carousel-recipe > &__recipes-carousel-img
+    &__recipes-carousel-img
         height: 150px
         width: 175px
         border-radius: .3rem
@@ -263,207 +258,83 @@
     background: #489899
     border-radius: 10px
 
-@media only screen and (min-width: 900px)
+@media screen and (min-width: 768px)
     .user-profile
-
         &__weight-form > input
-            border: 1px solid #0b7f94
+            width: 80%
 
-        &__name-weight-desktop
-            display: flex
-            justify-content: space-around
-            padding: 1rem 0
+        &__weights-container,
+        &__workout-container,
+        &__recipes-container,
+        &__articles-container,
+        &__record-container
+            width: 500px
 
-        &__logout-container
-            display: flex
-            justify-content: flex-end
-
-        &__delete, &__weight-btn
-            border: none
-            background-color: transparent
-            outline: none
-            cursor: pointer
-
-        &__name-pic
-            display: flex
-            flex-direction: column
+        &__user
+            font-size: 1.8rem
+            &--name
+                font-size: 1.8rem
 
         &__pic
-            max-width: 400px
-            margin: .3rem
-
-        &__progression-title
-            margin-top: 0
-
-        &__progression-btn
-            text-decoration-line: none
-            padding: .2rem 0
-            cursor: pointer
-            border-radius: .3rem
-            border: none
-            margin-left: .5rem
-
-        &__progression-btn:hover
-            background-color: #c2caca
+            width: 400px
 
         &__progression-input
-            margin: 0
-            line-height: .9rem
+            width: 400px
 
-        &__progression-input::-webkit-file-upload-button
-            visibility: hidden
+@media screen and (min-width: 1200px)
+    .user-profile
+        &__before,
+        &__current
+            font-size: 1.5rem
 
-        &__progression-input::before
-            content: 'Elige avatar'
-            display: inline-block
-            border: 1px solid #0b7f94
-            border-radius: 4px
-            padding: 5px 3px
-            outline: none
-            white-space: nowrap
-            cursor: pointer
-            font-weight: 600
-            font-size: 9pt
+        &__workout-img
+            width: 45px
 
-        &__progression-input:hover::before
-            border-color: #686b6b
+        &__workout--link
+            font-size: 2rem
+
+        &__scale-img
+            width: 60px
+
+        &__logout-container
+            grid-column: 2/4
+
+        &__title-container
+            font-size: 2.5rem
+
+        &__delete,
+        &__logout
+            font-size: 1.5rem
+            margin: 1rem
+
+        &__container
+            display: grid
+            grid-template-columns: .2fr 1.5fr 1.5fr .2fr
 
         &__feedback-pic
             font-size: .8rem
 
-        &__workout
-            padding: 0
+        &__avatar
+            grid-column: 2/3
 
-            &--list
-                display: flex
-                justify-content: space-between
-                width: 250px
-                margin: auto
-
-            &--link
-                text-align: center
-                align-self: center
-                font-size: 1rem
-
-        &__container
-            display: grid
-            grid-template-columns: 1fr 1fr
-            justify-items: center
+        &__weights-container
+            grid-column: 3/4
 
         &__workout-container
-            background-color: #eef5f5
-            width: 400px
-            border-radius: 1rem
-            margin: 1rem 0
-            padding: 0 0 .3rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
+            grid-column: 2/3
 
         &__recipes-container
-            background-color: #eef5f5
-            width: 400px
-            border-radius: 1rem
-            margin: 1rem 0
-            padding: 0 0 .3rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
+            grid-column: 3/4
+
+        &__recipes-carousel-img
+            height: 175px
+            width: 200px
 
         &__articles-container
-            background-color: #eef5f5
-            width: 400px
-            border-radius: 1rem
-            padding: 0 0 .3rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-            margin-top: 1rem
+            grid-column: 2/3
+
+        &__articles--link
+            font-size: 1.75rem
 
         &__record-container
-            background-color: #eef5f5
-            width: 400px
-            border-radius: 1rem
-            padding: 0 0 .3rem 0
-            box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.2)
-            margin-top: 1rem
-
-        &__question
-            margin-top: 1rem
-
-        &__name-pic
-            display: flex
-            justify-content: space-evenly
-
-        &__user
-
-            &--name
-                font-size: 1rem
-                font-weight: bold
-                margin: .2rem
-
-        &__logout
-            border: none
-            background-color: transparent
-            outline: none
-            cursor: pointer
-
-        &__no-articles
-            text-align: center
-
-        &__recipes
-            margin: 0
-
-        &__articles
-            padding: 0
-
-            &--link
-                color: #303236
-
-        &__articles-list
-            list-style: none
-            font-size: .8rem
-            text-align: center
-            margin: 0
-
-        &__workout-list
-            list-style: none
-            font-size: .8rem
-            text-align: center
-            margin: 0
-
-        &__workout--link
-            color: #303236
-
-        &__recipes-carousel
-            width: 90%
-            overflow: auto
-            white-space: nowrap
-            margin: .5rem auto
-
-        &__recipes-carousel-recipe
-            display: inline-block
-            margin: 0 .2rem
-            cursor: pointer
-
-        &__recipes-carousel-recipe > &__recipes-carousel-img
-            height: 110px
-            width: 150px
-            -webkit-filter: brightness(100%)
-
-        &__recipes-carousel-recipe > &__recipes-carousel-img:hover
-            -webkit-filter: brightness(55%)
-            -webkit-transition: all 1s ease
-            -moz-transition: all 1s ease
-            -o-transition: all 1s ease
-            -ms-transition: all 1s ease
-            transition: all 1s ease
-
-    /* width */
-    ::-webkit-scrollbar
-        width: .3rem
-        height: .4rem
-
-    /* Track */
-    ::-webkit-scrollbar-track
-        box-shadow: inset 0 0 5px grey
-        border-radius: 5px
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb
-        background: #489899
-        border-radius: 10px
+            grid-column: 3/4

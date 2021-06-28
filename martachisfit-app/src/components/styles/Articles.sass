@@ -79,12 +79,12 @@
 .article > p
     text-align: left
     width: 95%
-    margin: 1rem auto
+    margin: 1rem 0
     font-size: 1.2rem
 
 .article > ul
     list-style-type: circle
-    margin: 0
+    margin-left: 1rem
 
 ul > li
     text-align: left
@@ -98,7 +98,8 @@ ul > li
     content: ""
     background-image: url("../images/back-img-article.jpg")
     background-repeat: no-repeat
-    opacity: .2
+    background-position: center
+    opacity: .1
     top: 0
     left: 0
     bottom: 0
@@ -109,21 +110,20 @@ ul > li
 p > strong
     color: #0bb1ba
 
-@media only screen and (min-width: 1000px)
+@media only screen and (min-width: 1100px)
+    .article
+        &__container
+            width: 80%
 
-    .article-pseudo
-        display: block
-        position: relative
-        
-    .article-pseudo::after
-        content: ""
-        background-image: url("../images/back-img-article.jpg")
-        background-repeat: no-repeat
-        background-position: center
-        opacity: .3
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        position: absolute
-        z-index: -1
+        &__img
+            width: 500px
+            float: left
+            margin: 0 1rem 1rem 0
+
+        & > h3
+            font-size: 2rem
+
+        & p
+            font-size: 1.3rem
+
+

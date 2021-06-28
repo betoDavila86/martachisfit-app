@@ -18,7 +18,7 @@ export default function Articles({ source, onGoToRandomArticle, onSaveArticle, o
                 {message && <p className="article__added">¡Artículo añadido en su <a onClick={onGoToProfile} href="#">perfil</a>!</p>}
                 <article className="article">
                     <h3 className="article__title-article">{title}</h3>
-                    <img src={urlPathImg} alt="article-img" width="280px" />
+                    <img className="article__img" src={urlPathImg} alt="article-img" width="280px" />
                     <ReactMarkdown source={text} />
                 </article>
             </section>

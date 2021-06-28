@@ -16,11 +16,15 @@
         padding: .4rem
         text-decoration: none
         float: left
+
+    &__back:hover
+        background-color: #c0dfdf
     
     &__title
         display: flex
         align-items: center
         justify-content: space-evenly
+        margin-top: 1rem
 
     &__time
         font-size: 1.1rem
@@ -38,7 +42,7 @@
         display: flex
         text-align: left
         flex-direction: column
-        margin: auto
+        margin: 2rem auto 0
         border: 1px solid #cecece
         padding: .5rem 
         border-radius: .5rem
@@ -47,7 +51,7 @@
     &__macros > *
         margin-bottom: .2rem
         font-size: 1.3rem
-        margin: auto
+        margin: .5rem auto
 
     &__meals
         width: 100%
@@ -64,7 +68,7 @@
 
     &__meal
         font-size: 1.2rem
-        margin-bottom: .5rem
+        margin-bottom: 1.25rem
 
     &__random
         width: 95%
@@ -84,6 +88,7 @@
     content: ""
     background-image: url("../images/back-img-userdiet.jpg")
     background-repeat: no-repeat
+    background-position: center
     opacity: .2
     top: 0
     left: 0
@@ -91,3 +96,32 @@
     right: 0
     position: absolute
     z-index: -1
+
+@media screen and (min-width: 768px)
+    .user-diet
+        width: 80%
+
+        &__title
+            font-size: 1.6rem
+
+        &__back
+            margin-top: .5rem
+            padding: .7rem
+
+@media screen and (min-width: 1100px)
+    .user-diet
+
+        &__content
+            display: grid
+            grid-template-columns: .75fr .1fr 1.75fr
+
+        &__content-header
+            grid-column: 1/2
+
+        &__content-main
+            grid-column: 3/4
+            width: 85%
+            margin: 0 auto
+
+
+        

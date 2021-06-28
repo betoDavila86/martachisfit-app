@@ -10,6 +10,7 @@
     content: ""
     background-image: url("../images/back-img-workouts.jpg")
     background-repeat: no-repeat
+    background-position: center
     opacity: .05
     top: 0
     left: 0
@@ -25,6 +26,7 @@
         margin: auto
         text-align: left
         padding: 1rem
+        color: #96989c
 
     &__pre
         margin: 0 auto 2rem
@@ -70,7 +72,7 @@
         margin: 0 auto 1rem auto
         font-size: 1.3rem
 
-@media only screen and (min-width: 1024px)
+@media screen and (min-width: 1024px)
     .workouts
         &__container
             display: grid
@@ -80,7 +82,8 @@
             font-size: 2rem
 
         &__level
-            width: 320px
+            width: 330px
+
         &__level-title
             font-size: 1.75rem
 
@@ -91,3 +94,9 @@
     .workouts
         width: 75%
         margin: auto
+
+        &__level-description
+            font-size: 1.3rem
+
+        &__pre
+            width: 500px
