@@ -106,7 +106,7 @@ export default function UserProfile({ user, avatar, onSaved, feedbackWeight, onL
                     {!myWorkouts.length && <p className="user-profile__no-workout">No has añadido tu rutina de entrenamiento</p>}
                     {myWorkouts && !!myWorkouts.length && <ul className="user-profile__workout-list">
                         {myWorkouts.map(({ name, id, level }) => <li key={id} className="user-profile__workout-item">
-                            <UilDumbbell size="45" className="user-profile__workout-img" /><a className="user-profile__workout--link" onClick={() => onGoToMyWorkout(level)} href="#">{name}</a>
+                            <UilDumbbell size="45" className="user-profile__workout-img" /><a className="user-profile__workout--link" onClick={() => onGoToMyWorkout(level)} href="#">{name.toUpperCase()}</a>
                         </li>)}
                     </ul>}
                 </div>

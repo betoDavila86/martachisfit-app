@@ -2,7 +2,6 @@ import { findFood, retrieveUser } from '../logic'
 import { useState, useEffect } from 'react'
 import './styles/DietDesign.sass'
 import { Feedback, FoodResult } from './index'
-// import lupa from './icons/lupa.png'
 import { UilSearchAlt } from '@iconscout/react-unicons'
 
 export default function DietDesign({ onGoToProfile }) {

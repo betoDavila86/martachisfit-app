@@ -3,15 +3,15 @@
 
     &__title
         font-size: 2.5rem
-        margin: 1.5rem 0 0 0
+        margin: 3rem 0 0 0
 
     &__social
         position: absolute
-        right: 3rem
+        right: 1rem
         top: 1rem
         display: flex
         align-items: center
-        display: none
+        justify-content: center
 
     &__header
         display: flex
@@ -21,11 +21,14 @@
         padding: 0 1rem
 
     &__social-logo
-        margin: 0 .5rem
+        display: none
 
     &__logo
         margin: .5rem .2rem
         cursor: pointer
+
+    &__logout
+        margin-left: 1rem
 
 @media screen and (min-width: 600px)
     .home
@@ -37,6 +40,13 @@
             width: 150px
             height: auto
 
+        &__social-logo
+            display: inline-block
+
+        &__social
+            right: 3rem
+            top: .5rem
+            
 @media screen and (min-width: 1024px)
     .home
         &__title
@@ -46,9 +56,6 @@
         &__logo
             width: 215px
             margin-left: 2.5rem
-
-        &__social
-            display: block
 
 @media screen and (min-width: 1400px)
     .home

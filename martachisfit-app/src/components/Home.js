@@ -247,6 +247,7 @@ export default function Home() {
 
     const handleGoToProfile = () => {
         try {
+            setLoading(true);
             retrieveSavedArticles(token, (error, articles) => {
                 if (error) return feedbackError('No se pudo acceder. Error de servidor.')
 
@@ -258,12 +259,14 @@ export default function Home() {
                     retrieveSavedWorkouts(token, (error, savedWorkouts) => {
                         if (error) return feedbackError('No se pudo acceder. Error de servidor.')
 
-                        setSavedWorkouts(savedWorkouts)
+                        setSavedWorkouts(savedWorkouts);
+                        setLoading(false);
                         setView("profile")
                     })
                 })
             })
         } catch (error) {
+            setLoading(false);
             alert(error.message)
         }
     }
@@ -425,7 +428,7 @@ export default function Home() {
                     <a href="https://es-es.facebook.com/m.albimuro?fref=nf" rel="noreferrer" target="_blank"><UilFacebook size="30" className="home__social-logo" /></a>
                     <a href="https://www.instagram.com/martachis.fit/" rel="noreferrer" target="_blank"><UilInstagram size="30" className="home__social-logo" /></a>
                     <a href="https://www.linkedin.com/in/alberto-davila-gomez" rel="noreferrer" target="_blank"><UilLinkedin size="30" className="home__social-logo" /></a>
-                    <a className="home__logout" href="#" onClick={handleGoToLanding}><UilSignout size="30" className="home__social-logo" /></a>
+                    <a href="#" onClick={handleGoToLanding}><UilSignout size="30" className="home__logout" /></a>
                 </nav>
             </div>
             {error && <Feedback error={error} />}
@@ -464,7 +467,7 @@ export default function Home() {
                     onSaveArticle={handleSaveArticle}
                     onRead={handleReadArticle}
                 />}
-            {view === 'profile' &&
+            {(!loading && view === 'profile') &&
                 <UserProfile onGoToRecipe={handleGoToRecipe}
                     onLogout={handleGoToLogOut}
                     savedRecipes={savedRecipes}
