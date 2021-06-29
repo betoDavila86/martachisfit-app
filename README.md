@@ -1,4 +1,4 @@
-# MartachisFIT App v.0.0
+# MartachisFIT App v.1.0
 
 ![Alt MartachisFIT](https://res.cloudinary.com/beto-cloud-name/image/upload/c_scale,h_300/v1608012803/Martachis_fit_fondo_blanco_areyij.png "MartachisFIT Logo")
 
@@ -58,20 +58,19 @@ We will use this number to offer you some diet plans that you could even change,
 
 ![Alt MERN](https://i.morioh.com/200630/7055e259.jpg "MERN")
 
+### Versions
+v1.0 Improved overall style both in mobile and desktop version (29/06/21)
+
 ### TODO
 
 #### Code-related:
 - App Testing and reach 100% in server-side.
 - Watch out order, "cleanness" and semantic
-- Implement react-router-dom on Home compo
 - Start implementing async-await
 
 #### App-related:
 - Experience level (in the gym) input for the user
-- Improve the visual aspect of the meals layout (diet component)
 - Articles index creation (visual)
 - Populate the food db with more items
-- Watch out the images quality (some of them will be changed for self-made videos)
-- Comments component for recipes and articles
 
 
