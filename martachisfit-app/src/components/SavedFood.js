@@ -1,4 +1,5 @@
-import './styles/SavedFood.sass'
+import './styles/SavedFood.sass';
+import { UilTrash } from '@iconscout/react-unicons';
 
 export default function SavedFood({ food, onDelete, message }) {
 
@@ -19,7 +20,7 @@ export default function SavedFood({ food, onDelete, message }) {
                             event.preventDefault()
 
                             onDelete(_id)
-                        }} className="saved-food__delete" href="#">Borrar</a>}
+                        }} className="saved-food__delete" href="#"><UilTrash size="35" /></a>}
                     </div>
                 </li>)}
             </ul>}

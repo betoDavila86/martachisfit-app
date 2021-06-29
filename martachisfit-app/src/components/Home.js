@@ -22,10 +22,8 @@ import {
     deleteUser
 } from '../logic'
 
-import logo from '../../src/logo.png'
-import facebook from './icons/social/facebook.png'
-import instagram from './icons/social/instagram.png'
-import linkedin from './icons/social/linkedin.png'
+import logo from '../../src/logo.png';
+import { UilSignout, UilFacebook, UilInstagram, UilLinkedin } from '@iconscout/react-unicons';
 
 import {
     DropDownMenu,
@@ -43,7 +41,8 @@ import {
     Workout,
     Movements,
     Feedback,
-    Footer
+    Footer,
+    Spinner
 } from './index'
 
 export default function Home() {
@@ -67,15 +66,17 @@ export default function Home() {
     const [user, setUser] = useState()
     const [avatar, setAvatar] = useState()
     const [messageWeight, setMessageWeight] = useState()
-    // const [refreshWeight, setRefreshWeight] = useState()
+    const [loading, setLoading] = useState(false);
 
     const { token } = sessionStorage
 
     useEffect(() => {
+        setLoading(true);
         try {
             retrieveUser(token, (error, user) => {
                 if (error) return feedbackError('No se pudo recuperar el usuario. Error en el servidor :(')
 
+                setLoading(false);
                 setUser(user)
                 const { fullname } = user
                 setName(fullname)
@@ -421,10 +422,10 @@ export default function Home() {
                     <h1 className="home__title">MartachisFIT</h1>
                 </div>
                 <nav className="home__social">
-                    <a href="https://es-es.facebook.com/m.albimuro?fref=nf" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="facebook" src={facebook} width="20"></img></a>
-                    <a href="https://www.instagram.com/martachis.fit/" rel="noreferrer" target="_blank"><img alt="instagram" width="20" className="home__social-logo" src={instagram}></img></a>
-                    <a href="https://www.linkedin.com/in/alberto-davila-gomez" rel="noreferrer" target="_blank"><img className="home__social-logo" alt="linkedin" width="20" src={linkedin}></img></a>
-                    <a className="home__logout" href="#" onClick={handleGoToLanding}>Logout</a>
+                    <a href="https://es-es.facebook.com/m.albimuro?fref=nf" rel="noreferrer" target="_blank"><UilFacebook size="30" className="home__social-logo" /></a>
+                    <a href="https://www.instagram.com/martachis.fit/" rel="noreferrer" target="_blank"><UilInstagram size="30" className="home__social-logo" /></a>
+                    <a href="https://www.linkedin.com/in/alberto-davila-gomez" rel="noreferrer" target="_blank"><UilLinkedin size="30" className="home__social-logo" /></a>
+                    <a className="home__logout" href="#" onClick={handleGoToLanding}><UilSignout size="30" className="home__social-logo" /></a>
                 </nav>
             </div>
             {error && <Feedback error={error} />}
@@ -437,7 +438,8 @@ export default function Home() {
                 onGoToProfile={handleGoToProfile}
                 onGoToWorkouts={handleGoToWorkouts}
             />
-            {view === 'welcome' &&
+            {loading && <Spinner />}
+            {(!loading && view === 'welcome') &&
                 <Welcome
                     onGoToRecipes={handleGoToRecipes}
                     onGoToArticles={handleGoToBlog}
@@ -445,7 +447,7 @@ export default function Home() {
                     onGoToWorkouts={handleGoToWorkouts}
                     onGoToDietDesign={handleGoToDietDesign}
                 />}
-            {view === 'diet-design' && <DietDesign />}
+            {view === 'diet-design' && <DietDesign onGoToProfile={handleGoToProfile} />}
             {view === 'workouts' && <Workouts error={error} onChosenLevel={handleRetrieveWorkout} onGoToMovements={handleGoToMovements} />}
             {view === 'movements' && <Movements onGoToWorkouts={handleGoToWorkouts} onMuscularGroup={handleRetrieveGroup} movements={movements} error={error} />}
             {view === 'workout' && <Workout like={likedWorkout} error={error} onSaveWorkout={handleSaveWorkout} onGoToWorkouts={handleGoToWorkouts} source={workout} />}

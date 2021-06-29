@@ -15,7 +15,8 @@
 
     &__register
         margin: 2rem auto
-        width: 100%
+        width: 80%
+        display: flex
 
     &__register-btn
         text-decoration: none
@@ -28,12 +29,6 @@
 
     &__register-btn:hover
         background-color: #c0dfdf
-
-    &__p
-        width: 90%
-        margin: 1rem auto
-        font-size: 1.2rem
-        text-align: left
 
     &__macros
         margin: 2rem auto
@@ -51,5 +46,16 @@
         font-size: 1.5rem
         color: #0bb1ba
 
+@media screen and (min-width: 1100px)
+    .goal
+        width: 55%
 
-    
+        &__title
+            font-size: 4rem
+
+        &__macros
+            margin: 4rem auto
+
+        &__macros p
+            font-size: 1.75rem
+            margin-bottom: .75rem

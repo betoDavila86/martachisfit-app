@@ -1,6 +1,10 @@
 import './styles/Footer.sass';
+import { UilGithub, UilLinkedin, UilTwitter } from '@iconscout/react-unicons';
 
 const Footer = ({ onGoToArticles, onGoToWorkouts, onGoToDiets, onGoToRecipes }) => {
+    let date = new Date();
+    date = date.getFullYear();
+
     return (
         <footer className="footer">
             <div className="footer__container">
@@ -17,12 +21,12 @@ const Footer = ({ onGoToArticles, onGoToWorkouts, onGoToDiets, onGoToRecipes }) 
                     </ul>
                 </div>
                 <div className="footer__socials">
-                    <span>Twitter</span>
-                    <span>Github</span>
-                    <span>LinkedIn</span>
+                    <a href="https://twitter.com/BetoDvila5" target="_blank"><UilTwitter size="30" className="footer__socials-icon" /></a>
+                    <a href="https://github.com/betoDavila86" target="_blank"><UilGithub size="30" className="footer__socials-icon" /></a>
+                    <a href="https://www.linkedin.com/in/alberto-davila-gomez/" target="_blank"><UilLinkedin size="30" className="footer__socials-icon" /></a>
                 </div>
                 <div className="footer__copy">
-                    <span className="footer__copy-me">&#169;Beto Dávila</span>
+                    <span className="footer__copy-me">&#169; {date} Beto Dávila</span>
                 </div>
             </div>
         </footer>

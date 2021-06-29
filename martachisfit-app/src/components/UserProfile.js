@@ -2,8 +2,9 @@ import './styles/UserProfile.sass'
 import { SavedFood, Chart } from '.'
 import { retrieveSavedFood, toggleFoodUserDiet } from '../logic'
 import { useState, useEffect } from 'react'
-import mancuerna from './icons/mancuerna.png'
-import bascula from './icons/bascula.png'
+// import mancuerna from './icons/mancuerna.png'
+// import bascula from './icons/bascula.png';
+import { UilWeight, UilDumbbell } from '@iconscout/react-unicons'
 
 
 export default function UserProfile({ user, avatar, onSaved, feedbackWeight, onLogout, savedArticles, savedRecipes, onGoToRecipe, onGoToChosenArticle, onGoToMyWorkout, myWorkouts, onSavePicture, onSaveWeight, onDelete }) {
@@ -51,6 +52,7 @@ export default function UserProfile({ user, avatar, onSaved, feedbackWeight, onL
 
         let { target: { image } } = event
 
+        console.log(image.files[0]);
         onSavePicture(image.files[0])
     }
 
@@ -87,7 +89,8 @@ export default function UserProfile({ user, avatar, onSaved, feedbackWeight, onL
                         {weightHistory && <Chart weightHistory={weightHistory} />}
                     </div>
                     <div className="user-profile__weights-record">
-                        <img src={bascula} className="user-profile__scale-img" alt="bascula"></img>
+                        {/* <img src={bascula} className="user-profile__scale-img" alt="bascula"></img> */}
+                        <UilWeight size="60" className="user-profile__weights-icon" />
                         {weightHistory.length > 1 ? <p className="user-profile__before">Previo: {weightHistory[weightHistory.length - 2].weight} Kg ({weightHistory[weightHistory.length - 2].modifiedAt})</p> : <p className="user-profile__before">Peso anterior: Sin registro</p>}
                         {weightHistory.length ? <p className="user-profile__current"><span className="bold">Actual: {weightHistory[weightHistory.length - 1].weight} Kg ({weightHistory[weightHistory.length - 1].modifiedAt}) </span></p> : <p className="user-profile__current">Peso actual: Sin registro</p>}
                         <form className="user-profile__weight-form" onSubmit={handleSubmitWeight}>
@@ -103,7 +106,7 @@ export default function UserProfile({ user, avatar, onSaved, feedbackWeight, onL
                     {!myWorkouts.length && <p className="user-profile__no-workout">No has añadido tu rutina de entrenamiento</p>}
                     {myWorkouts && !!myWorkouts.length && <ul className="user-profile__workout-list">
                         {myWorkouts.map(({ name, id, level }) => <li key={id} className="user-profile__workout-item">
-                            <img src={mancuerna} alt="mancuerna" className="user-profile__workout-img"></img><a className="user-profile__workout--link" onClick={() => onGoToMyWorkout(level)} href="#">{name}</a>
+                            <UilDumbbell size="45" className="user-profile__workout-img" /><a className="user-profile__workout--link" onClick={() => onGoToMyWorkout(level)} href="#">{name}</a>
                         </li>)}
                     </ul>}
                 </div>

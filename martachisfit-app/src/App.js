@@ -1,5 +1,5 @@
 import './App.css';
-import { Landing, SignIn, CaloriesGoal, UserInfo, SignUp, Home } from './components';
+import { Landing, SignIn, CaloriesGoal, UserInfo, SignUp, Home, Spinner } from './components';
 import { useState } from 'react';
 import { macrosAfterCalories, caloriesCalc, registerUser, authenticateUser } from './logic/index';
 import { Route, withRouter, Redirect } from 'react-router-dom'
@@ -8,7 +8,8 @@ import { Route, withRouter, Redirect } from 'react-router-dom'
 export default withRouter(props => {
 
   const [goal, setGoal] = useState()
-  const [error, setError] = useState(null)
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false)
 
   function feedbackError(error) {
     setError(error)
@@ -48,14 +49,17 @@ export default withRouter(props => {
 
   const handleAuthenticateUser = (email, password) => {
     try {
+      setLoading(true);
       authenticateUser(email, password, (error, token) => {
         if (error) return feedbackError(error.message)
 
         sessionStorage.token = token
+        setLoading(false);
         props.history.push('/')
       })
     } catch (error) {
-      feedbackError("error de validación")
+      feedbackError("error de validación");
+      setLoading(false);
     }
   }
   const { token } = sessionStorage
@@ -67,7 +71,7 @@ export default withRouter(props => {
     <Route path='/landing' render={() => <Landing />} />
     <Route path='/user-info' render={() => <UserInfo onGoToGoalCaloriesAndMacros={handleGetCaloriesAndMacros} />} />
     <Route path='/calories-goal' render={() => <CaloriesGoal macros={goal} />} />
-
+    {loading && <Spinner />}
   </div>
 })
 

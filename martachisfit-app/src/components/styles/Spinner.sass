@@ -1,0 +1,24 @@
+.spinner
+    // display: inline-block
+    // width: 80px
+    height: 200px
+    width: 20%
+    margin: 3rem auto
+
+    &:after
+        content: ' '
+        display: block
+        width: 64px
+        height: 64px
+        margin: 8px
+        border-radius: 50%
+        border: 6px solid #0bb1ba
+        border-color: #0bb1ba transparent #0bb1ba transparent
+        animation: spinner 1.2s linear infinite
+
+@keyframes spinner
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)
