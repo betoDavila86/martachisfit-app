@@ -442,52 +442,54 @@ export default function Home() {
                 onGoToWorkouts={handleGoToWorkouts}
             />
             {loading && <Spinner />}
-            {(!loading && view === 'welcome') &&
-                <Welcome
-                    onGoToRecipes={handleGoToRecipes}
-                    onGoToArticles={handleGoToBlog}
-                    onGoToDiets={handleGoToUserDiet}
-                    onGoToWorkouts={handleGoToWorkouts}
-                    onGoToDietDesign={handleGoToDietDesign}
-                />}
-            {view === 'diet-design' && <DietDesign onGoToProfile={handleGoToProfile} />}
-            {view === 'workouts' && <Workouts error={error} onChosenLevel={handleRetrieveWorkout} onGoToMovements={handleGoToMovements} />}
-            {view === 'movements' && <Movements onGoToWorkouts={handleGoToWorkouts} onMuscularGroup={handleRetrieveGroup} movements={movements} error={error} />}
-            {view === 'workout' && <Workout like={likedWorkout} error={error} onSaveWorkout={handleSaveWorkout} onGoToWorkouts={handleGoToWorkouts} source={workout} />}
-            {view === 'recipes' && recipes && <Recipes source={recipes} onGoToRecipe={handleGoToRecipe} />}
-            {view === 'recipe' && recipe && <Recipe onGoToRecipes={handleGoToRecipes} error={error} onSaveRecipe={handleSaveRecipe} source={recipe} message={message} like={likedRecipe} />}
-            {view === 'chosen-diet' && <UserDiet diet={chosenDiet} onGoToDiets={handleGoToUserDiet} />}
-            {view === 'diets' && <Diets onChosenDiet={handleRetrieveChosenDiet} onGoToDiets={handleGoToUserDiet} goal={calories} />}
-            {view === 'articles' && article &&
-                <Articles source={article}
-                    error={error}
-                    message={message}
-                    onGoToRandomArticle={handleGoToRandomArticle}
-                    onGoToProfile={handleGoToProfile}
-                    onSaveArticle={handleSaveArticle}
-                    onRead={handleReadArticle}
-                />}
-            {(!loading && view === 'profile') &&
-                <UserProfile onGoToRecipe={handleGoToRecipe}
-                    onLogout={handleGoToLogOut}
-                    savedRecipes={savedRecipes}
-                    user={user}
-                    savedArticles={savedArticles}
-                    onGoToChosenArticle={handleGoToChosenArticle}
-                    onGoToMyWorkout={handleRetrieveWorkout}
-                    myWorkouts={myWorkouts}
-                    onSavePicture={handleSavePicture}
-                    error={error}
-                    feedbackImage={message}
-                    avatar={avatar}
-                    feedbackWeight={messageWeight}
-                    onSaveWeight={handleSaveWeight}
-                    onSaved={handleModifiedWeightUser}
-                    onDelete={handleDeleteUser}
-                // refreshWeight={refreshWeight}
-                />}
-            {view === 'chosen-article' && <ChosenArticle source={chosenArticle} error={error} message={message} onReadArticle={handleReadArticle} />}
-            {view === 'logout' && <Logout onRefresh={handleGoToLanding} name={name} />}
+            {!loading && <>
+                {view === 'welcome' &&
+                    <Welcome
+                        onGoToRecipes={handleGoToRecipes}
+                        onGoToArticles={handleGoToBlog}
+                        onGoToDiets={handleGoToUserDiet}
+                        onGoToWorkouts={handleGoToWorkouts}
+                        onGoToDietDesign={handleGoToDietDesign}
+                    />}
+                {view === 'diet-design' && <DietDesign onGoToProfile={handleGoToProfile} />}
+                {view === 'workouts' && <Workouts error={error} onChosenLevel={handleRetrieveWorkout} onGoToMovements={handleGoToMovements} />}
+                {view === 'movements' && <Movements onGoToWorkouts={handleGoToWorkouts} onMuscularGroup={handleRetrieveGroup} movements={movements} error={error} />}
+                {view === 'workout' && <Workout like={likedWorkout} error={error} onSaveWorkout={handleSaveWorkout} onGoToWorkouts={handleGoToWorkouts} source={workout} />}
+                {view === 'recipes' && recipes && <Recipes source={recipes} onGoToRecipe={handleGoToRecipe} />}
+                {view === 'recipe' && recipe && <Recipe onGoToRecipes={handleGoToRecipes} error={error} onSaveRecipe={handleSaveRecipe} source={recipe} message={message} like={likedRecipe} />}
+                {view === 'chosen-diet' && <UserDiet diet={chosenDiet} onGoToDiets={handleGoToUserDiet} />}
+                {view === 'diets' && <Diets onChosenDiet={handleRetrieveChosenDiet} onGoToDiets={handleGoToUserDiet} goal={calories} />}
+                {view === 'articles' && article &&
+                    <Articles source={article}
+                        error={error}
+                        message={message}
+                        onGoToRandomArticle={handleGoToRandomArticle}
+                        onGoToProfile={handleGoToProfile}
+                        onSaveArticle={handleSaveArticle}
+                        onRead={handleReadArticle}
+                    />}
+                {view === 'profile' &&
+                    <UserProfile onGoToRecipe={handleGoToRecipe}
+                        onLogout={handleGoToLogOut}
+                        savedRecipes={savedRecipes}
+                        user={user}
+                        savedArticles={savedArticles}
+                        onGoToChosenArticle={handleGoToChosenArticle}
+                        onGoToMyWorkout={handleRetrieveWorkout}
+                        myWorkouts={myWorkouts}
+                        onSavePicture={handleSavePicture}
+                        error={error}
+                        feedbackImage={message}
+                        avatar={avatar}
+                        feedbackWeight={messageWeight}
+                        onSaveWeight={handleSaveWeight}
+                        onSaved={handleModifiedWeightUser}
+                        onDelete={handleDeleteUser}
+                    // refreshWeight={refreshWeight}
+                    />}
+                {view === 'chosen-article' && <ChosenArticle source={chosenArticle} error={error} message={message} onReadArticle={handleReadArticle} />}
+                {view === 'logout' && <Logout onRefresh={handleGoToLanding} name={name} />}
+            </>}
             <Footer
                 onGoToRecipes={handleGoToRecipes}
                 onGoToArticles={handleGoToBlog}
